@@ -1,0 +1,27 @@
+.modal {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 2s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  background-color: rgba(44, 44, 44, 0.5);
+}
+
+.modal__text {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  padding: 5% 20%;
+  border-radius: 15px;
+  background-color: white;
+}
