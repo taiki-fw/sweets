@@ -30,7 +30,7 @@ export function Timer() {
 
   return (
     <div>
-      <p className="time">{isRunning ? elapsedTime : ""}</p>
+      <span className="time">{isRunning ? elapsedTime : ""}</span>
       <div className={`modal ${isRunning ? "" : "active"}`}>
         <span className="modal__text">終了</span>
       </div>
