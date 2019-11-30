@@ -5,8 +5,9 @@ import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
-import "./Btn.css";
+import "./reset.css";
 import "./App.css";
+import "./Btn.css";
 
 function App() {
   return (
