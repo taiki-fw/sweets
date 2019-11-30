@@ -19,7 +19,14 @@ export function ActionBtn({ type, children }) {
     });
   };
   return (
-    <span onMouseEnter={MouseEnter} onMouseLeave={MouseLeave}>
+    <span
+      onMouseEnter={MouseEnter}
+      onMouseLeave={MouseLeave}
+      style={{
+        display: "inline-block",
+        background: "darkgrey"
+      }}
+    >
       {children}
     </span>
   );

@@ -1,7 +1,11 @@
 import React from "react";
 import { ActionBtn } from "./Btn";
 import { Timer } from "./Timer";
-import logo from "./logo.svg";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import "./Btn.css";
 import "./App.css";
 
 function App() {
@@ -10,16 +14,28 @@ function App() {
       <Timer />
       <div className="actions">
         <div className="actions__left">
-          <ActionBtn type="front">上</ActionBtn>
+          <ActionBtn type="front">
+            <ArrowUpwardIcon />
+          </ActionBtn>
           <div className="actions__left__center">
-            <ActionBtn type="left">左</ActionBtn>
-            <ActionBtn type="right">右</ActionBtn>
+            <ActionBtn type="left">
+              <ArrowBackIcon style={{ margin: "0 40px 0 0" }} />
+            </ActionBtn>
+            <ActionBtn type="right">
+              <ArrowForwardIcon style={{ margin: "0 0 0 40px" }} />
+            </ActionBtn>
           </div>
-          <ActionBtn type="back">下</ActionBtn>
+          <ActionBtn type="back">
+            <ArrowDownwardIcon />
+          </ActionBtn>
         </div>
         <div className="actions__right">
-          <ActionBtn type="up">Up</ActionBtn>
-          <ActionBtn type="down">Down</ActionBtn>
+          <ActionBtn type="up">
+            <ArrowUpwardIcon />
+          </ActionBtn>
+          <ActionBtn type="down">
+            <ArrowDownwardIcon />
+          </ActionBtn>
         </div>
       </div>
     </React.Fragment>
