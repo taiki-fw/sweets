@@ -20,8 +20,8 @@ export function ActionBtn({ type, children }) {
   };
   return (
     <span
-      onMouseEnter={MouseEnter}
-      onMouseLeave={MouseLeave}
+      onMouseUp={MouseEnter}
+      onMouseDown={MouseLeave}
       style={{
         display: "inline-block",
         background: "darkgrey"
