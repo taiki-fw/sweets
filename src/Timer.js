@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./timer.css";
+import axios from "axios";
 
 export function Timer() {
   const [startTime, setStartTime] = useState(new Date().getTime());
@@ -10,23 +11,21 @@ export function Timer() {
     setInterval(() => {
       const elapsedTime = Math.floor((new Date().getTime() - startTime) / 1000);
       if (elapsedTime >= 60) {
-        // fetch("", {
-        //   method: "POST",
-        //   body: JSON.stringify({ type: "all", direction: "stop" }),
-        //   headers: {
-        //     "Content-Type": "application/json"
-        //   }
-        // }).then(res => {
-        setRunning(false);
-        setTimeout(() => {
-          window.close();
-        }, 3000);
-        // });
+        axios
+          .post("https://c3b218fc.ngrok.io/", {
+            type: "all",
+            direction: "stop"
+          })
+          .then(res => {
+            setRunning(false);
+            setTimeout(() => {
+              window.close();
+            }, 3000);
+          });
       } else {
         setElapsedTime(elapsedTime);
       }
     }, 1000);
-    console.log(elapsedTime);
   }, [elapsedTime]);
 
   return (

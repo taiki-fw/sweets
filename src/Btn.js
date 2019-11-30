@@ -1,31 +1,28 @@
 import React from "react";
+import axios from "axios";
 
 export function ActionBtn({ type, children }) {
   const MouseEnter = () => {
     console.log(`${type}Enter`);
 
-    // fetch("", {
-    //   method: "POST",
-    //   body: JSON.stringify({ type: type, direction: "go" }),
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   }
-    // });
+    axios.post("https://c3b218fc.ngrok.io/", {
+      type: type,
+      direction: "go"
+    });
   };
   const MouseLeave = () => {
     console.log(`${type}Leave`);
 
-    // fetch("", {
-    //   method: "POST",
-    //   body: JSON.stringify({ type: type, direction: "stop" }),
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   }
-    // });
+    axios.post("https://c3b218fc.ngrok.io/", {
+      body: JSON.stringify({ type: type, direction: "stop" }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
   };
   return (
-    <div onMouseEnter={MouseEnter} onMouseLeave={MouseLeave}>
+    <span onMouseEnter={MouseEnter} onMouseLeave={MouseLeave}>
       {children}
-    </div>
+    </span>
   );
 }
