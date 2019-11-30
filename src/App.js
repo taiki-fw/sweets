@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ActionBtn } from "./Btn";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="actions">
+      <div className="actions__left">
+        <ActionBtn type="front">上</ActionBtn>
+        <div className="actions__left__center">
+          <ActionBtn type="left">左</ActionBtn>
+          <ActionBtn type="right">右</ActionBtn>
+        </div>
+        <ActionBtn type="back">下</ActionBtn>
+      </div>
+      <div className="actions__right">
+        <ActionBtn type="up">Up</ActionBtn>
+        <ActionBtn type="down">Down</ActionBtn>
+      </div>
     </div>
   );
 }
