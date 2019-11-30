@@ -13,11 +13,9 @@ export function ActionBtn({ type, children }) {
   const MouseLeave = () => {
     console.log(`${type}Leave`);
 
-    axios.post("https://c3b218fc.ngrok.io/", {
-      body: JSON.stringify({ type: type, direction: "stop" }),
-      headers: {
-        "Content-Type": "application/json"
-      }
+    axios.post("localhost:3000", {
+      type: type,
+      direction: "stop"
     });
   };
   return (

@@ -12,7 +12,7 @@ export function Timer() {
       const elapsedTime = Math.floor((new Date().getTime() - startTime) / 1000);
       if (elapsedTime >= 60) {
         axios
-          .post("https://c3b218fc.ngrok.io/", {
+          .post("localhost:3000", {
             type: "all",
             direction: "stop"
           })
