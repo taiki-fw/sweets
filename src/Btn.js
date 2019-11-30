@@ -5,7 +5,7 @@ export function ActionBtn({ type, children }) {
   const MouseEnter = () => {
     console.log(`${type}Enter`);
 
-    axios.post("https://c3b218fc.ngrok.io/", {
+    axios.post("http://localhost:8080/", {
       type: type,
       direction: "go"
     });
@@ -13,7 +13,7 @@ export function ActionBtn({ type, children }) {
   const MouseLeave = () => {
     console.log(`${type}Leave`);
 
-    axios.post("localhost:3000", {
+    axios.post("http://localhost:8080/", {
       type: type,
       direction: "stop"
     });

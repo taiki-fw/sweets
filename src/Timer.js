@@ -10,9 +10,9 @@ export function Timer() {
   useEffect(() => {
     setInterval(() => {
       const elapsedTime = Math.floor((new Date().getTime() - startTime) / 1000);
-      if (elapsedTime >= 60) {
+      if (elapsedTime >= 180) {
         axios
-          .post("localhost:3000", {
+          .post("http://localhost:8080/", {
             type: "all",
             direction: "stop"
           })
@@ -30,7 +30,9 @@ export function Timer() {
 
   return (
     <div>
-      <span className="time">{isRunning ? elapsedTime : ""}</span>
+      <span className={isRunning ? "time" : "none"}>
+        {isRunning ? elapsedTime : ""}
+      </span>
       <div className={`modal ${isRunning ? "" : "active"}`}>
         <span className="modal__text">終了</span>
       </div>
